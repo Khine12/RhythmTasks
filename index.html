@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,3 +67,73 @@
   <script type="module" src="index.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RhythmTasks | Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+
+  <!-- Real-Time Clock (top-right) -->
+  <div class="clock-wrapper">
+    <div id="clock" class="clock">--:--</div>
+  </div>
+
+  <!-- Main Authentication Container -->
+  <main class="auth-container">
+
+    <!-- App Title -->
+    <h1 class="app-title">RhythmTasks</h1>
+    <p class="subtitle"><em>Organize your week with intention using <strong>RhythmTasks</strong>.</em></p>
+
+    <!-- Login & Signup Panels -->
+    <div class="auth-panels">
+
+      <!-- Login Form -->
+      <div class="auth-panel">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Email" autocomplete="email" required />
+        <input type="password" id="login-password" placeholder="Password" autocomplete="current-password" required />
+        <a href="#" id="forgot-password" class="forgot-link">🔑 Forgot password?</a>
+        <button id="login-btn" class="btn yellow">Login</button>
+      </div>
+
+      <!-- Sign-Up Form -->
+      <div class="auth-panel">
+        <h2>Sign Up</h2>
+        <input type="email" id="signup-email" placeholder="Email" autocomplete="email" required />
+        <input type="password" id="signup-password" placeholder="Create Password" autocomplete="new-password" required />
+        <input type="password" id="signup-password-confirm" placeholder="Retype Password" autocomplete="new-password" required />
+        <button id="signup-btn" class="btn yellow">Sign Up</button>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      Khine Zar Hein | Built with 💻 and ☕ | Based in the US
+    </footer>
+  </main>
+
+  <!-- Clock Script -->
+  <script>
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('clock').textContent = now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+  <!-- Firebase Auth Logic -->
+  <script type="module" src="index.js"></script>
+</body>
+</html>
+>>>>>>> 8557c6ac5418f44e0589173bffaafde5c1bf8bda
