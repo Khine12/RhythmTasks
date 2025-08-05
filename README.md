@@ -1,5 +1,6 @@
-RhythmTasks 🗓️
-Organize your week with intention using RhythmTasks — a full-stack weekly task planner with Firebase integration.
+RhythmTasks 
+
+🗓️ Organize your week with intention using RhythmTasks — a full-stack weekly task planner with Firebase integration.
 
 🌟 Overview
 RhythmTasks is a productivity web app that helps users manage their weekly tasks by day. Built with HTML, CSS, JavaScript, and Firebase (Authentication + Firestore), the app allows users to:
