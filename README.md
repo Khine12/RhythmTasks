@@ -40,7 +40,7 @@ Hosting: GitHub Pages
 🚀 How to Use
 Visit the https://khine12.github.io/RhythmTasks/index.html
 
-Sign up with your email and password
+Sign up with your email and create your own password
 
 Check your inbox (and spam folder) for the verification email
 
