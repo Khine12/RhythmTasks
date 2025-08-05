@@ -47,6 +47,7 @@ Check your inbox (and spam folder) for the verification email
 Once verified, log in and start organizing your week!
 
 🔧 Project Status
+
 RhythmTasks is fully functional and actively being improved.
 Next planned updates may include UI refinements, and possible calendar view integration.
 
