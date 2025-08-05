@@ -25,14 +25,13 @@ loginBtn?.addEventListener('click', async () => {
 
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    const user = userCredential.user;
 
-    if (user.emailVerified) {
-      window.location.href = 'dashboard.html';
-    } else {
-      alert('Please verify your email before logging in.');
-      await auth.signOut();
+    if (!userCredential.user.emailVerified) {
+      alert('Please verify your email address before continuing.');
+      return;
     }
+
+    window.location.href = 'dashboard.html';
   } catch (error) {
     console.error(error);
     alert('Login failed: ' + error.message);
@@ -57,12 +56,9 @@ signupBtn?.addEventListener('click', async () => {
 
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    const user = userCredential.user;
+    await sendEmailVerification(userCredential.user);
 
-    await sendEmailVerification(user);
-    alert('Sign-up successful! A verification email has been sent. Please check your inbox and verify your email.');
-
-    await auth.signOut(); // Prevent access until verified
+    alert('Sign-up successful! A verification email has been sent. Please check your inbox.');
   } catch (error) {
     console.error(error);
     alert('Sign-up failed: ' + error.message);
