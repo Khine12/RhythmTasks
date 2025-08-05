@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RhythmTasks | Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+
+  <!-- Top-right Clock -->
+  <div class="clock-wrapper">
+    <div id="clock" class="clock">--:--</div>
+  </div>
+
+  <!-- Main Dashboard -->
+  <main class="dashboard-container">
+
+    <!-- App Title & Subtitle -->
+    <h1 class="app-title">RhythmTasks</h1>
+    <p class="subtitle">
+      <em>Organize your week with intention using <strong>RhythmTasks</strong>.</em>
+    </p>
+
+    <!-- Display Logged-in User -->
+    <div id="user-email" class="user-email" aria-label="Logged in user email">👤</div>
+
+    <!-- Task Input Form -->
+    <form id="task-form" class="task-form" autocomplete="off">
+      <input type="text" id="task-input" placeholder="Enter a new task..." required />
+
+      <select id="day-select" required>
+        <option value="" disabled selected>Choose day</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+        <option value="Any">Any</option>
+      </select>
+
+      <select id="category-select">
+        <option value="" disabled selected>Category</option>
+        <option value="Work">Work</option>
+        <option value="Study">Study</option>
+        <option value="Health">Health</option>
+        <option value="Home">Home</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <input type="text" id="custom-category" placeholder="Or type your own category..." />
+
+      <button type="submit" class="btn yellow">Add</button>
+    </form>
+
+    <!-- Render All Days Here -->
+    <section id="task-sections" class="task-sections" aria-label="Weekly Task Lists"></section>
+
+    <!-- Controls -->
+    <div class="action-buttons">
+      <button id="summary-button" class="btn yellow">Show Weekly Summary</button>
+      <button id="reset-button" class="btn red">Reset</button>
+      <button id="logout-btn" class="btn logout">Logout</button>
+    </div>
+
+    <!-- Weekly Summary -->
+    <section id="summary" class="weekly-summary" aria-label="Weekly Summary Section"></section>
+
+    <!-- Footer -->
+    <footer>
+      Khine Zar Hein | Built with 💻 and ☕ | Based in the US
+    </footer>
+  </main>
+
+  <!-- Live Clock -->
+  <script>
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('clock').textContent = now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+  <!-- App Logic -->
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>
