@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
+  sendEmailVerification,
   onAuthStateChanged
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
 
@@ -23,8 +24,15 @@ loginBtn?.addEventListener('click', async () => {
   }
 
   try {
-    await signInWithEmailAndPassword(auth, email, password);
-    window.location.href = 'dashboard.html';
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+
+    if (user.emailVerified) {
+      window.location.href = 'dashboard.html';
+    } else {
+      alert('Please verify your email before logging in.');
+      await auth.signOut();
+    }
   } catch (error) {
     console.error(error);
     alert('Login failed: ' + error.message);
@@ -48,8 +56,13 @@ signupBtn?.addEventListener('click', async () => {
   }
 
   try {
-    await createUserWithEmailAndPassword(auth, email, password);
-    window.location.href = 'dashboard.html';
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+
+    await sendEmailVerification(user);
+    alert('Sign-up successful! A verification email has been sent. Please check your inbox and verify your email.');
+
+    await auth.signOut(); // Prevent access until verified
   } catch (error) {
     console.error(error);
     alert('Sign-up failed: ' + error.message);
@@ -73,7 +86,7 @@ forgotPasswordLink?.addEventListener('click', async (e) => {
 
 // ------------------- AUTO REDIRECT IF LOGGED IN -------------------
 onAuthStateChanged(auth, (user) => {
-  if (user && window.location.pathname.includes('index.html')) {
+  if (user && user.emailVerified && window.location.pathname.includes('index.html')) {
     window.location.href = 'dashboard.html';
   }
 });
