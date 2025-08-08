@@ -1,56 +1,55 @@
-RhythmTasks 
+### 🎯 RhythmTasks
 
-🗓️ Organize your week with intention using RhythmTasks — a full-stack weekly task planner with Firebase integration.
+Organize your week with intention.
 
-🌟 Overview
-RhythmTasks is a productivity web app that helps users manage their weekly tasks by day. Built with HTML, CSS, JavaScript, and Firebase (Authentication + Firestore), the app allows users to:
+RhythmTasks is a full-stack productivity web app that helps you plan, track, and manage weekly tasks — all synced in real time using Firebase.
 
-Sign up and log in securely
+### 🌟 Overview
 
-Add tasks to specific days of the week (or to a general "Any" section)
+RhythmTasks lets users break down their week into daily tasks with a clean interface and real-time sync. Whether you're planning ahead or adjusting on the fly, the app is designed to support focus, flexibility, and consistency.
 
-Track and edit tasks across multiple devices in real time
+### 🧠 Built With:
 
-Reset their password if needed
-
-Receive email verification (check your spam folder if you don’t see it right away!)
-
-🔐 Tech Stack
 Frontend: HTML, CSS, JavaScript
 
-Backend: Firebase Authentication, Cloud Firestore
+Backend: Firebase Authentication & Cloud Firestore
 
 Hosting: GitHub Pages
 
-✅ Features
-🕒 Real-time clock (syncs with user’s device)
+### ✅ Core Features
 
-🔒 Email/password authentication
+🔐 Secure Auth: Email/password sign-up, login, and email verification
 
-📨 Password reset and email verification
+🔁 Password Reset: Easily recover your account
 
-🗂️ Weekly view: Monday to Sunday + “Any” section
+📅 Day-by-Day Planner: Tasks for each day (Monday–Sunday) + a flexible "Any" section
 
-✏️ Add, edit, delete tasks
+✍️ Task Controls: Add, edit, delete tasks with ease
 
-🌗 Dark theme by default
+🌓 Dark Mode: Clean default theme for visual comfort
 
-📊 Weekly summary section
+🧠 Weekly Summary: At-a-glance view of your progress
 
-🚀 How to Use
-Visit the https://khine12.github.io/RhythmTasks/index.html
+🕒 Live Clock: Real-time device-synced time display
 
-Sign up with your email and create your own password
+🌐 Cross-Device Sync: Tasks update in real time on all devices
 
-Check your inbox (and spam folder) for the verification email
+### 🚀 Getting Started
 
-Once verified, log in and start organizing your week!
+Visit the live site → https://khine12.github.io/RhythmTasks/index.html
 
-🔧 Project Status
+Sign up with your email and password
 
-RhythmTasks is fully functional and actively being improved.
-Next planned updates may include UI refinements, and possible calendar view integration.
+Verify your email (check spam folder if needed)
 
-💡 Inspiration
-This project was inspired by my love of writing to-do lists by hand. I wanted to bring that same intentional rhythm into a digital tool that I and others could use.
+Log in and start organizing your week!
 
+### 💡 Inspiration
+
+I’ve always loved planning my week with handwritten to-do lists. RhythmTasks brings that same mindful rhythm into a digital experience — with a clean UI, dark mode, and task sections that match how real people think about time.
+
+### 👩‍💻 Developer
+
+Khine Zar Hein
+
+LinkedIn : www.linkedin.com/in/khine-zar-hein
