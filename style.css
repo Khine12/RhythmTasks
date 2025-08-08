@@ -294,15 +294,79 @@ footer {
 
 /* ==== Responsive ==== */
 @media (max-width: 768px) {
+  /* Stack layout vertically */
   .auth-panels,
   .task-form,
   .task-sections {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
+  /* Full-width panels */
   .auth-panel,
   .day-section {
-    width: 90%;
+    width: 95%;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Input and button styles */
+  input,
+  textarea,
+  button,
+  select {
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Task list buttons */
+  .task-buttons button {
+    width: 100%;
+    margin: 6px 0;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  /* Reduce padding inside day sections */
+  .day-section {
+    padding: 10px;
+  }
+
+  /* Compact task item spacing */
+  .task-item {
+    font-size: 15px;
+    line-height: 1.4;
+    padding: 8px;
+  }
+
+  /* Weekly summary box spacing */
+  #weekly-summary {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Center footer and wrap nicely */
+  footer {
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+    word-break: break-word;
+  }
+
+  /* Reduce header size */
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.95rem;
+  }
+
+  /* Real-time clock size */
+  #clock {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
   }
 }
