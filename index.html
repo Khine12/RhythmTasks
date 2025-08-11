@@ -8,22 +8,17 @@
 </head>
 <body class="dark">
 
-  <!-- Real-Time Clock (top-right) -->
   <div class="clock-wrapper">
     <div id="clock" class="clock">--:--</div>
   </div>
 
-  <!-- Main Authentication Container -->
   <main class="auth-container">
 
-    <!-- App Title -->
     <h1 class="app-title">RhythmTasks</h1>
     <p class="subtitle"><em>Organize your week with intention using <strong>RhythmTasks</strong>.</em></p>
 
-    <!-- Login & Signup Panels -->
     <div class="auth-panels">
 
-      <!-- Login Form -->
       <div class="auth-panel">
         <h2>Login</h2>
         <input type="email" id="login-email" placeholder="Email" autocomplete="email" required />
@@ -32,7 +27,6 @@
         <button id="login-btn" class="btn yellow">Login</button>
       </div>
 
-      <!-- Sign-Up Form -->
       <div class="auth-panel">
         <h2>Sign Up</h2>
         <input type="email" id="signup-email" placeholder="Email" autocomplete="email" required />
@@ -43,13 +37,11 @@
 
     </div>
 
-    <!-- Footer -->
     <footer>
       Khine Zar Hein | Built with 💻 and ☕ | Based in the US
     </footer>
   </main>
 
-  <!-- Clock Script -->
   <script>
     function updateClock() {
       const now = new Date();
@@ -62,7 +54,6 @@
     updateClock();
   </script>
 
-  <!-- Firebase Auth Logic -->
   <script type="module" src="index.js"></script>
 </body>
 </html>
