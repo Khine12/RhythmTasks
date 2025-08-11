@@ -1,4 +1,3 @@
-// dashboard.js
 import { auth, db } from './firebase-config.js';
 import {
   doc,
@@ -15,7 +14,6 @@ import {
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Any"];
 let currentUserEmail = null;
 
-// Elements
 const userEmailDisplay = document.getElementById('user-email');
 const logoutBtn = document.getElementById('logout-btn');
 const taskForm = document.getElementById('task-form');
@@ -28,7 +26,6 @@ const summaryBtn = document.getElementById('summary-button');
 const resetBtn = document.getElementById('reset-button');
 const summarySection = document.getElementById('summary');
 
-// Auth Check
 onAuthStateChanged(auth, async (user) => {
   if (user) {
     currentUserEmail = user.email;
@@ -40,15 +37,13 @@ onAuthStateChanged(auth, async (user) => {
   }
 });
 
-// Logout
 logoutBtn.addEventListener('click', async () => {
   await signOut(auth);
   window.location.href = 'index.html';
 });
 
-// Render All Day Sections (empty to start)
 function renderAllDaySections() {
-  taskSections.innerHTML = ''; // Clear existing
+  taskSections.innerHTML = ''; 
   days.forEach(day => {
     const section = document.createElement('section');
     section.className = 'day-section';
@@ -62,7 +57,6 @@ function renderAllDaySections() {
   setupToggleListeners();
 }
 
-// Toggle collapsible triangle
 function setupToggleListeners() {
   document.querySelectorAll('.day-header').forEach(header => {
     header.addEventListener('click', () => {
@@ -79,7 +73,6 @@ function setupToggleListeners() {
   });
 }
 
-// Add Task
 taskForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const task = taskInput.value.trim();
@@ -102,7 +95,6 @@ taskForm.addEventListener('submit', async (e) => {
   customCategory.value = '';
 });
 
-// Load Tasks in Real-Time
 function listenToTasks() {
   const userDoc = doc(db, 'users', currentUserEmail);
   onSnapshot(userDoc, (docSnap) => {
@@ -113,9 +105,7 @@ function listenToTasks() {
   });
 }
 
-// Render tasks into the day sections
 function renderTasks(tasks) {
-  // Clear all lists
   days.forEach(day => {
     const ul = document.getElementById(`list-${day}`);
     if (ul) ul.innerHTML = '';
@@ -140,7 +130,6 @@ function renderTasks(tasks) {
   });
 }
 
-// Mark task done or undo
 window.toggleDone = async function (index) {
   const userDoc = doc(db, 'users', currentUserEmail);
   const docSnap = await getDoc(userDoc);
@@ -151,7 +140,6 @@ window.toggleDone = async function (index) {
   await updateDoc(userDoc, { tasks });
 };
 
-// Delete task
 window.deleteTask = async function (index) {
   const userDoc = doc(db, 'users', currentUserEmail);
   const docSnap = await getDoc(userDoc);
@@ -162,7 +150,6 @@ window.deleteTask = async function (index) {
   await updateDoc(userDoc, { tasks });
 };
 
-// Show Weekly Summary
 summaryBtn.addEventListener('click', async () => {
   const userDoc = doc(db, 'users', currentUserEmail);
   const docSnap = await getDoc(userDoc);
@@ -186,7 +173,6 @@ summaryBtn.addEventListener('click', async () => {
   summarySection.innerHTML = html;
 });
 
-// Reset Weekly Tasks
 resetBtn.addEventListener('click', async () => {
   const userDoc = doc(db, 'users', currentUserEmail);
   const docSnap = await getDoc(userDoc);
