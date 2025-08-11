@@ -1,4 +1,3 @@
-// index.js
 import { auth } from './firebase-config.js';
 import {
   signInWithEmailAndPassword,
@@ -8,12 +7,10 @@ import {
   onAuthStateChanged
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
 
-// ELEMENT SELECTORS
 const loginBtn = document.getElementById('login-btn');
 const signupBtn = document.getElementById('signup-btn');
 const forgotPasswordLink = document.getElementById('forgot-password');
 
-// ------------------- LOGIN -------------------
 loginBtn?.addEventListener('click', async () => {
   const email = document.getElementById('login-email')?.value.trim();
   const password = document.getElementById('login-password')?.value.trim();
@@ -38,7 +35,6 @@ loginBtn?.addEventListener('click', async () => {
   }
 });
 
-// ------------------- SIGN UP -------------------
 signupBtn?.addEventListener('click', async () => {
   const email = document.getElementById('signup-email')?.value.trim();
   const password = document.getElementById('signup-password')?.value.trim();
@@ -65,7 +61,6 @@ signupBtn?.addEventListener('click', async () => {
   }
 });
 
-// ------------------- FORGOT PASSWORD -------------------
 forgotPasswordLink?.addEventListener('click', async (e) => {
   e.preventDefault();
   const email = prompt("Enter your email to receive a password reset link:");
@@ -80,7 +75,6 @@ forgotPasswordLink?.addEventListener('click', async (e) => {
   }
 });
 
-// ------------------- AUTO REDIRECT IF LOGGED IN -------------------
 onAuthStateChanged(auth, (user) => {
   if (user && user.emailVerified && window.location.pathname.includes('index.html')) {
     window.location.href = 'dashboard.html';
