@@ -52,4 +52,4 @@ I’ve always loved planning my week with handwritten to-do lists. RhythmTasks b
 
 Khine Zar Hein
 
-Connect on [LinkedIn](www.linkedin.com/in/khine-zar-hein)
+Connect on [LinkedIn](https://www.linkedin.com/in/khine-zar-hein)
