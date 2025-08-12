@@ -24,7 +24,7 @@ Hosting: GitHub Pages
 
 📅 Day-by-Day Planner: Tasks for each day (Monday–Sunday) + a flexible "Any" section
 
-✍️ Task Controls: Add, edit, delete tasks with ease
+✍️ Task Controls: Add, delete with ease
 
 🌓 Dark Mode: Clean default theme for visual comfort
 
@@ -38,11 +38,11 @@ Hosting: GitHub Pages
 
 Visit the live site → https://khine12.github.io/RhythmTasks/index.html
 
-Sign up with your email and password
-
-Verify your email (check spam folder if needed)
-
-Log in and start organizing your week!
+1. Sign up with your email and create password.
+   
+2. Verify your email.
+   
+3. Log in and start organizing your week with RhythmTasks!
 
 ### 💡 Inspiration
 
