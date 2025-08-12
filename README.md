@@ -36,7 +36,7 @@ Hosting: GitHub Pages
 
 ### 🚀 Getting Started
 
-Visit the live site → https://khine12.github.io/RhythmTasks/index.html
+Visit [Live Demo](https://khine12.github.io/RhythmTasks/index.html)
 
 1. Sign up with your email and create password.
    
@@ -52,4 +52,4 @@ I’ve always loved planning my week with handwritten to-do lists. RhythmTasks b
 
 Khine Zar Hein
 
-LinkedIn : www.linkedin.com/in/khine-zar-hein
+Connect on [LinkedIn](www.linkedin.com/in/khine-zar-hein)
